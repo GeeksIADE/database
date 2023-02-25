@@ -1,0 +1,31 @@
+version: "3"
+services:
+  # backend:
+  #   build: .
+  #   ports:
+  #     - "${PORT:-8000}:${PORT:-8000}"
+  #   env_file:
+  #     - .env
+
+  database:
+    image: postgres
+    hostname: postgres
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./migrations:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL
+  #     - PGADMIN_DEFAULT_PASSWORD
+  #   ports:
+  #     - "80:80"
+
+volumes:
+  pgdata:
