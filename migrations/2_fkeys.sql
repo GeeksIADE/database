@@ -2,8 +2,8 @@
 
 create table users_games (
     users_games_id SERIAL NOT NULL CONSTRAINT users_games_pkey PRIMARY KEY,
-    users_id uuid REFERENCES users (user_id) ON UPDATE CASCADE ON DELETE CASCADE,
-    games_id uuid REFERENCES games (game_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    users_id int REFERENCES users (user_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    games_id int REFERENCES games (game_id) ON UPDATE CASCADE ON DELETE CASCADE,
     created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
     updated_at timestamp with time zone not null default CURRENT_TIMESTAMP
 );
