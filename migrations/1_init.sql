@@ -36,11 +36,11 @@ create table games (
     game_id SERIAL NOT NULL CONSTRAINT games_pkey PRIMARY KEY,
     game_steam_id int null,
     game_name varchar not null,
-    game_rank varchar null,
     created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
     updated_at timestamp with time zone not null default CURRENT_TIMESTAMP
 
 );
+
 
 create table profiles (
     profile_id SERIAL NOT NULL CONSTRAINT profiles_pkey PRIMARY KEY,
@@ -50,30 +50,30 @@ create table profiles (
     created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
     updated_at timestamp with time zone not null default CURRENT_TIMESTAMP,
 
-    CONSTRAINT profile_fk_user FOREIGN KEY (profile_users_id) REFERENCES users (user_id)
+    CONSTRAINT profile_fk_user FOREIGN KEY (profile_users_id) REFERENCES user_id
     ON DELETE CASCADE ON UPDATE CASCADE
 
 );
 
 create table profile_ratings (
-    profile_rating_id SERIAL NOT NULL CONSTRAINT profile_ratings_pkey PRIMARY KEY,
+    profile_rating_id SERIAL NOT NULL CONSTRAINT profiles_pkey PRIMARY KEY,
     profile_rating_value int,
     profile_rating_profile_id int,
     created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
     updated_at timestamp with time zone not null default CURRENT_TIMESTAMP,
 
-    CONSTRAINT pr_fk_profile FOREIGN KEY (profile_rating_profile_id) REFERENCES profiles (profile_id)
+    CONSTRAINT pr_fk_profile FOREIGN KEY (profile_rating_profile_id) REFERENCES profile_id
     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
 create table profile_comments (
-    profile_comment_id SERIAL NOT NULL CONSTRAINT profile_comments_pkey PRIMARY KEY,
+    profile_comment_id SERIAL NOT NULL CONSTRAINT profiles_pkey PRIMARY KEY,
     profile_comment_text varchar not null,
     profile_comment_profile_id int,
     created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
     updated_at timestamp with time zone not null default CURRENT_TIMESTAMP,
 
-    CONSTRAINT pc_fk_profile FOREIGN KEY (profile_comment_profile_id) REFERENCES profiles (profile_id)
+    CONSTRAINT pc_fk_profile FOREIGN KEY (profile_comment_profile_id) REFERENCES profile_id
     ON DELETE CASCADE ON UPDATE CASCADE
 );
