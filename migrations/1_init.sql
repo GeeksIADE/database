@@ -22,6 +22,7 @@ create table users (
     user_reset_code varchar,
     user_register_code varchar,
     user_reset_code_at timestamp with time zone not null default CURRENT_TIMESTAMP,
+    account_deleted_at timestamp with time zone,
     created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
     updated_at timestamp with time zone not null default CURRENT_TIMESTAMP,
 
