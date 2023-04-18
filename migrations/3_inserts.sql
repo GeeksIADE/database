@@ -35,7 +35,7 @@ VALUES
   (7, 'I am a hardcore gamer and always looking for a challenge.'),
   (8, 'I am a Minecraft enthusiast and enjoy building and exploring new worlds.'),
   (9, 'I enjoy playing games with my friends and having a good time.'),
-  (10, 'I am an avid gamer and always looking for new experiences.');
+  (10, 'I am an avid gamer and always looking for new experiences.'),
   (11, 'I am a software engineer who loves playing games in my free time.'),
   (12, 'I am a premium user and enjoy playing games with my friends.'),
   (13, 'I am a moderator for this website and love helping the community.'),
