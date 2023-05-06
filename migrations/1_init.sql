@@ -33,9 +33,17 @@ create table users (
 create table games (
     game_id SERIAL NOT NULL CONSTRAINT games_pkey PRIMARY KEY,
     game_name varchar not null,
+    has_roles BOOLEAN NOT NULL DEFAULT false,
     created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
     updated_at timestamp with time zone not null default CURRENT_TIMESTAMP
 
+);
+
+CREATE TABLE game_roles (
+    role_id SERIAL NOT NULL CONSTRAINT game_roles_pkey PRIMARY KEY,
+    role_name VARCHAR NOT NULL,
+    game_id INT NOT NULL,
+    CONSTRAINT game_roles_fk_game FOREIGN KEY (game_id) REFERENCES games (game_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 create table profiles (
@@ -72,4 +80,48 @@ create table profile_comments (
 
     CONSTRAINT pc_fk_profile FOREIGN KEY (profile_comment_profile_id) REFERENCES profiles (profile_id)
     ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE room_modes (
+    mode_id SERIAL NOT NULL CONSTRAINT room_modes_pkey PRIMARY KEY,
+    mode_name VARCHAR NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE rooms (
+    room_id SERIAL NOT NULL CONSTRAINT rooms_pkey PRIMARY KEY,
+    room_name VARCHAR NOT NULL,
+    room_code VARCHAR UNIQUE,
+    game_id INT NOT NULL,
+    mode_id INT NOT NULL,
+    min_rank INT,
+    max_rank INT,
+    max_players INT,
+    is_private BOOLEAN NOT NULL DEFAULT false,
+    owner_id INT NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT rooms_fk_game FOREIGN KEY (game_id) REFERENCES games (game_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT rooms_fk_mode FOREIGN KEY (mode_id) REFERENCES room_modes (mode_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT rooms_fk_owner FOREIGN KEY (owner_id) REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE room_role_requirements (
+    requirement_id SERIAL NOT NULL CONSTRAINT room_role_requirements_pkey PRIMARY KEY,
+    room_id INT NOT NULL,
+    role_id INT NOT NULL,
+    players_needed INT NOT NULL,
+    players_joined INT NOT NULL DEFAULT 0,
+    CONSTRAINT room_role_requirements_fk_room FOREIGN KEY (room_id) REFERENCES rooms (room_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT room_role_requirements_fk_role FOREIGN KEY (role_id) REFERENCES game_roles (role_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE room_members (
+    room_member_id SERIAL NOT NULL CONSTRAINT room_members_pkey PRIMARY KEY,
+    room_id INT NOT NULL,
+    user_id INT NOT NULL,
+    joined_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT room_members_fk_room FOREIGN KEY (room_id) REFERENCES rooms (room_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT room_members_fk_user FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );

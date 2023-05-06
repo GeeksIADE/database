@@ -73,3 +73,65 @@ insert into games (game_name) values ('Genshin Impact');
 insert into games (game_name) values ('Super Smash Bros. Ultimate');
 insert into games (game_name) values ('NBA 2K22');
 insert into games (game_name) values ('Madden NFL 22');
+
+-- Add game modes
+INSERT INTO room_modes (mode_name) VALUES ('Team Deathmatch');
+INSERT INTO room_modes (mode_name) VALUES ('Free for All');
+INSERT INTO room_modes (mode_name) VALUES ('Capture the Flag');
+INSERT INTO room_modes (mode_name) VALUES ('King of the Hill');
+INSERT INTO room_modes (mode_name) VALUES ('Last Team Standing');
+INSERT INTO room_modes (mode_name) VALUES ('Survival');
+
+-- Add rooms
+INSERT INTO rooms (room_name, room_code, game_id, mode_id, min_rank, max_rank, max_players, is_private, owner_id)
+VALUES
+('Team Deathmatch', 'aaaaa', 1, 1, 0, 10, 12, false, 1),
+('Free for All', 'bbbbb', 1, 2, 0, 5, 8, false, 2),
+('Capture the Flag', 'ccccc', 2, 3, 0, 20, 16, true, 3),
+('King of the Hill', 'ddddd', 2, 4, 5, 15, 10, true, 4),
+('Last Team Standing', 'eeeee', 3, 5, 10, 20, 12, false, 5),
+('Survival', 'fffff', 3, 6, 0, 30, 20, true, 6),
+('Grand Theft Auto V', 'ggggg',6, 1, 0, 50, 30, false, 7),
+('Minecraft', 'hhhhh', 7, 2, 0, 10, 8, false, 8),
+('Apex Legends', 'iiiii',9, 3, 10, 30, 20, true, 9),
+('Sea of Thieves', 'jjjjj',10, 4, 0, 50, 16, true, 10);
+
+-- Add game roles
+INSERT INTO game_roles (role_name, game_id)
+VALUES
+('Assassin', 21),
+('Brute', 21),
+('Archer', 21),
+('Mage', 21),
+('Warrior', 21),
+('Thief', 21),
+('Hacker', 22),
+('Soldier', 22),
+('Scientist', 22),
+('Pirate', 10),
+('Captain', 10),
+('Sailor', 10),
+('Navigator', 10);
+
+-- Add room role requirements
+INSERT INTO room_role_requirements (room_id, role_id, players_needed)
+VALUES
+(1, 2, 2),
+(1, 3, 8),
+(1, 1, 2),
+(2, 3, 5),
+(2, 1, 1),
+(3, 2, 10),
+(3, 3, 10),
+(3, 1, 2),
+(4, 1, 4),
+(4, 2, 4),
+(4, 3, 2),
+(5, 2, 8),
+(5, 3, 4),
+(6, 1, 10),
+(6, 2, 5),
+(7, 1, 20),
+(8, 2, 4),
+(9, 3, 10),
+(10, 4, 4);
