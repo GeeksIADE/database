@@ -1,4 +1,6 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS postgis;
+
 CREATE TYPE user_role AS ENUM ('admin', 'user');
 CREATE CAST (character varying AS user_role) WITH INOUT AS ASSIGNMENT;
 
@@ -12,7 +14,10 @@ create table users (
     user_id SERIAL NOT NULL CONSTRAINT users_pkey PRIMARY KEY,
     user_first_name varchar not null,
     user_last_name varchar,
-    user_location varchar,
+    user_latitude float,
+    user_longitude float,
+    user_geohash varchar,
+    geopoint geography(Point, 4326),
     user_name varchar not null unique,
     user_email varchar not null unique,
     user_password varchar not null,
