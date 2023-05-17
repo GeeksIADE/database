@@ -5,23 +5,27 @@ insert into roles (role_name, role_rank) values ('user', 2);            -- 3
 
 
 -- Add users
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Francisco', 'Traquete', 'frant7', 'francisco@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Maria', 'Martins', 'maria', 'maria@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 1);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Mario', 'Nascimento', 'darkarp', 'mario@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 2);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Afonso', 'Goulart', 'afih', 'afonso@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Roberta', 'Santos', 'robi', 'roberta@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('João', 'Garcia', 'johnny', 'joao@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Miguel', 'Bernardo', 'michael', 'michael@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Laura', 'Martins', 'lala', 'laura@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Pedro', 'Costa', 'costa', 'pedro@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Antónia', 'Manaia', 'tozita', 'antonia@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('John', 'Doe', 'johndoe', 'johndoe@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 1);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Jane', 'Doe', 'janedoe', 'janedoe@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 2);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Robert', 'Johnson', 'robertj', 'robertj@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Emily', 'Smith', 'emilys', 'emilys@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('David', 'Miller', 'davidm', 'davidm@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Sarah', 'Wilson', 'sarahw', 'sarahw@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
-insert into users (user_first_name, user_last_name, user_name, user_email, user_password, user_role) values ('Andrew', 'Brown', 'andrewb', 'andrewb@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Francisco', 'Traquete', 40.7128, -74.0060, 'frant7', 'francisco@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Maria', 'Martins', 34.0522, -118.2437, 'maria', 'maria@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 1);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Rebeca', 'Sampaio', 38.76586733113478, -9.328340294084374, 'becass', 'becas.sampaio@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 1);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Rafael', 'Lopes', 38.76542659056428, -9.319570279144052, 'Rafa22', 'rafinha223@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Mary', 'Smith', 52.80498930163646, -7.210197285379516, 'Maryy69', 'MarySmith321@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Juan', 'Pedro', -12.046736440303187, -77.0386049974415, 'JuanP', 'Ruan.pedro23@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Freddy', 'Vargas', -16.723410330675108, -65.06324448960709, 'Freddy01', 'Freddyjsvargas@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Larissa', 'Silveira', -9.294031543781895, -54.20069924751627, 'Lari', 'Larissas.87@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Enzo', 'Lima', -15.80765298134054, -47.840544255732816, 'Enzo', 'Enzo.limaa@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Mariana', 'Gallardo', 7.043495534365549, -66.43902783934018, 'Gall', 'mariana.gall@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Jose', 'Lopez', 3.5955896774857092, -73.13082075397814, 'Lopez', 'Lopez.jose@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Rosa', 'Garcia', 23.837408858393793, -102.33570600603271, 'Rosinha', 'rosagarcia.23@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Tom', 'Lind', 41.885266840975014, -87.67017716980152, 'Tom34', 'Tomdsl.34@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Peter', 'John', 43.85499962955408, -84.61868944881356, 'Peterpan', 'Peterlkj.4@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Gabriel', 'Alejandro', 40.42111161345961, -3.7090739508700903, 'Gaby0', 'Gabriel.alej@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Laura', 'Grimaldo', 39.46900605964421, -0.36975397929131526, 'Laurinha', 'Laura.g2003@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Anastasiya', 'Petrov', 62.210477886242735, 99.02527303704454, 'anasty12', 'Anastasiyapetrov.2001@gmail.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Robert', 'Johnson', 34.0522, -118.2437, 'robertjohnson', 'robert@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Michael', 'Brown', 51.5074, -0.1278, 'mikebrown', 'michael@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Emily', 'Davis', 37.7749, -122.4194, 'emilyd', 'emily@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
+insert into users (user_first_name, user_last_name, user_latitude, user_longitude, user_name, user_email, user_password, user_role) values ('Thomas', 'Anderson', 62.89823483054959, 17.03084546348124, 'neo', 'neo@example.com', '$2a$10$wRlbp8spWVi1O7JQ1NhzcuIvEUZiEKHNZzsEp/AOVzRScoP0WA97a', 3);
 
 -- Add profiles
 INSERT INTO profiles (profile_users_id, profile_bio)
@@ -31,7 +35,7 @@ VALUES
   (3, 'I am a moderator for this website and help keep the community safe.'),
   (4, 'I love playing games and meeting new people.'),
   (5, 'I am a casual gamer who enjoys playing games in my free time.'),
-  (6, 'I love playing games and discovering new strategies.'),
+  (6, 'I love playing games and discovering new strategies.');
   (7, 'I am a hardcore gamer and always looking for a challenge.'),
   (8, 'I am a Minecraft enthusiast and enjoy building and exploring new worlds.'),
   (9, 'I enjoy playing games with my friends and having a good time.'),
@@ -90,7 +94,7 @@ VALUES
 ('Capture the Flag', 'ccccc', 2, 3, 0, 20, 16, true, 3),
 ('King of the Hill', 'ddddd', 2, 4, 5, 15, 10, true, 4),
 ('Last Team Standing', 'eeeee', 3, 5, 10, 20, 12, false, 5),
-('Survival', 'fffff', 3, 6, 0, 30, 20, true, 6),
+('Survival', 'fffff', 3, 6, 0, 30, 20, true, 6);
 ('Grand Theft Auto V', 'ggggg',6, 1, 0, 50, 30, false, 7),
 ('Minecraft', 'hhhhh', 7, 2, 0, 10, 8, false, 8),
 ('Apex Legends', 'iiiii',9, 3, 10, 30, 20, true, 9),
@@ -130,7 +134,7 @@ VALUES
 (5, 2, 8),
 (5, 3, 4),
 (6, 1, 10),
-(6, 2, 5),
+(6, 2, 5);
 (7, 1, 20),
 (8, 2, 4),
 (9, 3, 10),
