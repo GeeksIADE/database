@@ -87,8 +87,8 @@ create table profile_comments (
     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE room_modes (
-    mode_id SERIAL NOT NULL CONSTRAINT room_modes_pkey PRIMARY KEY,
+CREATE TABLE modes (
+    mode_id SERIAL NOT NULL CONSTRAINT modes_pkey PRIMARY KEY,
     mode_name VARCHAR NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -100,15 +100,15 @@ CREATE TABLE rooms (
     room_code VARCHAR UNIQUE,
     game_id INT NOT NULL,
     mode_id INT NOT NULL,
-    min_rank INT,
-    max_rank INT,
+    min_rank varchar,
+    max_rank varchar,
     max_players INT,
     is_private BOOLEAN NOT NULL DEFAULT false,
     owner_id INT NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT rooms_fk_mode FOREIGN KEY (mode_id) REFERENCES modes (mode_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT rooms_fk_game FOREIGN KEY (game_id) REFERENCES games (game_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT rooms_fk_mode FOREIGN KEY (mode_id) REFERENCES room_modes (mode_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT rooms_fk_owner FOREIGN KEY (owner_id) REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 

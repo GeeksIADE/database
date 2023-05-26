@@ -35,7 +35,7 @@ VALUES
   (3, 'I am a moderator for this website and help keep the community safe.'),
   (4, 'I love playing games and meeting new people.'),
   (5, 'I am a casual gamer who enjoys playing games in my free time.'),
-  (6, 'I love playing games and discovering new strategies.');
+  (6, 'I love playing games and discovering new strategies.'),
   (7, 'I am a hardcore gamer and always looking for a challenge.'),
   (8, 'I am a Minecraft enthusiast and enjoy building and exploring new worlds.'),
   (9, 'I enjoy playing games with my friends and having a good time.'),
@@ -79,12 +79,20 @@ insert into games (game_name) values ('NBA 2K22');
 insert into games (game_name) values ('Madden NFL 22');
 
 -- Add game modes
-INSERT INTO room_modes (mode_name) VALUES ('Team Deathmatch');
-INSERT INTO room_modes (mode_name) VALUES ('Free for All');
-INSERT INTO room_modes (mode_name) VALUES ('Capture the Flag');
-INSERT INTO room_modes (mode_name) VALUES ('King of the Hill');
-INSERT INTO room_modes (mode_name) VALUES ('Last Team Standing');
-INSERT INTO room_modes (mode_name) VALUES ('Survival');
+INSERT INTO modes (mode_name) VALUES ('Team Deathmatch');
+INSERT INTO modes (mode_name) VALUES ('Free for All');
+INSERT INTO modes (mode_name) VALUES ('Capture the Flag');
+INSERT INTO modes (mode_name) VALUES ('King of the Hill');
+INSERT INTO modes (mode_name) VALUES ('Last Team Standing');
+INSERT INTO modes (mode_name) VALUES ('Survival');
+INSERT INTO modes (mode_name) VALUES ('5v5');
+INSERT INTO modes (mode_name) VALUES ('3v3');
+
+-- Add game + modes
+INSERT INTO games_modes (games_id, modes_id) VALUES (1, 1);
+INSERT INTO games_modes (games_id, modes_id) VALUES (1, 2);
+INSERT INTO games_modes (games_id, modes_id) VALUES (2, 7);
+INSERT INTO games_modes (games_id, modes_id) VALUES (2, 8);
 
 -- Add rooms
 INSERT INTO rooms (room_name, room_code, game_id, mode_id, min_rank, max_rank, max_players, is_private, owner_id)
@@ -94,7 +102,7 @@ VALUES
 ('Capture the Flag', 'ccccc', 2, 3, 0, 20, 16, true, 3),
 ('King of the Hill', 'ddddd', 2, 4, 5, 15, 10, true, 4),
 ('Last Team Standing', 'eeeee', 3, 5, 10, 20, 12, false, 5),
-('Survival', 'fffff', 3, 6, 0, 30, 20, true, 6);
+('Survival', 'fffff', 3, 6, 0, 30, 20, true, 6),
 ('Grand Theft Auto V', 'ggggg',6, 1, 0, 50, 30, false, 7),
 ('Minecraft', 'hhhhh', 7, 2, 0, 10, 8, false, 8),
 ('Apex Legends', 'iiiii',9, 3, 10, 30, 20, true, 9),
@@ -134,7 +142,7 @@ VALUES
 (5, 2, 8),
 (5, 3, 4),
 (6, 1, 10),
-(6, 2, 5);
+(6, 2, 5),
 (7, 1, 20),
 (8, 2, 4),
 (9, 3, 10),

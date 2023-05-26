@@ -23,3 +23,10 @@ create table users_roles (
     created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
     updated_at timestamp with time zone not null default CURRENT_TIMESTAMP
 );
+create table games_modes (
+    games_modes_id SERIAL NOT NULL CONSTRAINT games_modes_pkey PRIMARY KEY,
+    games_id int REFERENCES games (game_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    modes_id int REFERENCES modes (mode_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    created_at timestamp with time zone not null default CURRENT_TIMESTAMP,
+    updated_at timestamp with time zone not null default CURRENT_TIMESTAMP
+);
