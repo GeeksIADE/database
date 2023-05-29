@@ -79,6 +79,7 @@ insert into games (game_name) values ('NBA 2K22');
 insert into games (game_name) values ('Madden NFL 22');
 
 -- Add game modes
+INSERT INTO modes (mode_name) VALUES ('Any');
 INSERT INTO modes (mode_name) VALUES ('Team Deathmatch');
 INSERT INTO modes (mode_name) VALUES ('Free for All');
 INSERT INTO modes (mode_name) VALUES ('Capture the Flag');
@@ -87,12 +88,55 @@ INSERT INTO modes (mode_name) VALUES ('Last Team Standing');
 INSERT INTO modes (mode_name) VALUES ('Survival');
 INSERT INTO modes (mode_name) VALUES ('5v5');
 INSERT INTO modes (mode_name) VALUES ('3v3');
+INSERT INTO modes (mode_name) VALUES ('Solo');
+INSERT INTO modes (mode_name) VALUES ('Duo');
+INSERT INTO modes (mode_name) VALUES ('Squad');
+INSERT INTO modes (mode_name) VALUES ('Arena');
+INSERT INTO modes (mode_name) VALUES ('Arcade');
+INSERT INTO modes (mode_name) VALUES ('Campaign');
+INSERT INTO modes (mode_name) VALUES ('Custom');
+INSERT INTO modes (mode_name) VALUES ('Deathmatch');
+INSERT INTO modes (mode_name) VALUES ('Hardcore');
+INSERT INTO modes (mode_name) VALUES ('Battle Royale');
+INSERT INTO modes (mode_name) VALUES ('Adventure');
+INSERT INTO modes (mode_name) VALUES ('Puzzle');
+INSERT INTO modes (mode_name) VALUES ('PvP');
+INSERT INTO modes (mode_name) VALUES ('PvE');
 
 -- Add game + modes
-INSERT INTO games_modes (games_id, modes_id) VALUES (1, 1);
-INSERT INTO games_modes (games_id, modes_id) VALUES (1, 2);
-INSERT INTO games_modes (games_id, modes_id) VALUES (2, 7);
-INSERT INTO games_modes (games_id, modes_id) VALUES (2, 8);
+--Counter-Strike: Global Offensive
+INSERT INTO games_modes (games_id, modes_id) VALUES (1, 1); -- ANY
+INSERT INTO games_modes (games_id, modes_id) VALUES (1, 2); -- Team Deathmatch
+INSERT INTO games_modes (games_id, modes_id) VALUES (1, 3); -- Free for All
+INSERT INTO games_modes (games_id, modes_id) VALUES (1, 17); -- Deathmatch
+INSERT INTO games_modes (games_id, modes_id) VALUES (1, 18); -- Hardcore
+
+--League of Legends
+INSERT INTO games_modes (games_id, modes_id) VALUES (2, 1); -- ANY
+INSERT INTO games_modes (games_id, modes_id) VALUES (2, 8); -- 5v5
+INSERT INTO games_modes (games_id, modes_id) VALUES (2, 9); -- 3v3
+
+--Smite
+INSERT INTO games_modes (games_id, modes_id) VALUES (3, 1); -- ANY
+INSERT INTO games_modes (games_id, modes_id) VALUES (3, 8); -- 5v5
+INSERT INTO games_modes (games_id, modes_id) VALUES (3, 20); -- PvP
+INSERT INTO games_modes (games_id, modes_id) VALUES (3, 12); -- Arena
+
+--Valorant
+INSERT INTO games_modes (games_id, modes_id) VALUES (4, 1); -- ANY
+INSERT INTO games_modes (games_id, modes_id) VALUES (4, 2); -- Team Deathmatch
+INSERT INTO games_modes (games_id, modes_id) VALUES (4, 8); -- 5v5
+INSERT INTO games_modes (games_id, modes_id) VALUES (4, 18); -- Hardcore
+INSERT INTO games_modes (games_id, modes_id) VALUES (4, 17); -- Deathmatch
+INSERT INTO games_modes (games_id, modes_id) VALUES (4, 9); -- 3v3
+
+--Dota 2
+INSERT INTO games_modes (games_id, modes_id) VALUES (5, 1); -- ANY
+INSERT INTO games_modes (games_id, modes_id) VALUES (5, 8); -- 5v5
+INSERT INTO games_modes (games_id, modes_id) VALUES (5, 20); -- PvP
+INSERT INTO games_modes (games_id, modes_id) VALUES (5, 9); -- 3v3
+INSERT INTO games_modes (games_id, modes_id) VALUES (5, 17); -- Deathmatch
+
 
 -- Add rooms
 INSERT INTO rooms (room_name, room_code, game_id, mode_id, min_rank, max_rank, max_players, is_private, owner_id)
